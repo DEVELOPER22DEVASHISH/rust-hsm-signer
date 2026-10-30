@@ -432,9 +432,6 @@ docker exec hsm-signer \
 - **Concurrency 10 → 100**: throughput plateaus at ~15,400/s. This is the **actual HSM ceiling** on a laptop. Additional sessions queue.
 - **Concurrency 100 → 500**: successful throughput *drops* because **79.63% of requests are rejected immediately with 503 + Retry-After**. This is the intended backpressure: better to serve 20% of traffic fast than to queue everyone and let p99 latency explode.
 
-**The interviewer's likely question — "why doesn't throughput keep scaling?"**  
-Answer: *"HSM sessions are a scarce resource. We bound concurrency at 8 (pool size) + 256 (queue depth). Beyond that, we reject with 503 + Retry-After. This keeps p99 latency bounded and protects healthy requests from starvation. Horizontal scaling — more replicas, each with its own HSM pool — is how you'd get past a single instance's ceiling."*
-
 ---
 
 ## 13. Run the Automated Test Suite
