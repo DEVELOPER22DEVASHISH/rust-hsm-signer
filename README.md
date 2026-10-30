@@ -616,19 +616,5 @@ The Dockerfile pins `rust:1.97.1-bookworm`. If a dependency is bumped in `Cargo.
 
 ---
 
-## Deliverables Checklist
-
-- [x] Rust HTTP service with `POST /v1/sign` (axum + tokio)
-- [x] PKCS#11 integration (SoftHSM2), non-extractable ECDSA P-256 + AES-256
-- [x] Token authentication via PIN file (no hardcoded credentials)
-- [x] Public-key signature verification (startup self-test + integration test)
-- [x] `CryptoBackend` trait — mock and PKCS#11 backends interchangeable
-- [x] Session pool with bounded concurrency, timeouts, admission control
-- [x] Structured audit logging (no secrets, no payloads)
-- [x] 6 HTTP unit tests + 1 SoftHSM2 end-to-end integration test — all passing
-- [x] Load test at 1 / 10 / 100 / 500 concurrency with p50/p95/p99 table
-- [x] Prometheus metrics (latency, pool saturation, per-op counters)
-- [x] Container image (multi-stage, non-root)
-- [x] README with build/run/test/architecture/benchmarks
 ```
 
