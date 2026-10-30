@@ -1,0 +1,16 @@
+=== Step 1: POST /v1/sign ===
+{"key_id":"arkion-intermediate-prod","algorithm":"ECDSA_P256_SHA256","signature":"WcTf0UQ4eNjMzKkA41WYYnUKiqXYIYhqs8NyNpown2HSZFaY2BdFeFXouJjnpBYkJdBorbt1wS7WcGcRbR1I1g==","duration_ms":2}
+
+=== Step 2: GET /v1/keys/arkion-intermediate-prod/public ===
+{"key_id":"arkion-intermediate-prod","algorithm":"ECDSA_P256_SHA256","public_key_sec1":"BF+eyVrJg2GDjTPpoFinxv+p5u9XOMpdiQAptpoeACK17aGv+z4bxPfiqz5n6TTUwyp8eX4WfyKTisd59z8vw9Y="}
+
+=== Step 3: Convert r||s → DER ===
+  wrote /tmp/sig.der (71 bytes)
+
+=== Step 4: Convert SEC1 point → PEM SPKI ===
+  wrote /tmp/pk.pem (65-byte SEC1 point wrapped as SPKI)
+
+=== Step 5: openssl dgst -sha256 -verify ===
+  payload: 'hello world'
+  verifying...
+Verified OK

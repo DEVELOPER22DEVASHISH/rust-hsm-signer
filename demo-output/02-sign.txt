@@ -1,0 +1,2 @@
+--- POST /v1/sign ---
+{"key_id":"arkion-intermediate-prod","algorithm":"ECDSA_P256_SHA256","signature":"Uu6V99kGut/tg172FcC2vHdzfUfMGsvpOYujffNhcjBUgQtBfEcZyOQcCluJ8MU8JhK1kRl8HUDi1tm1gy0ukQ==","duration_ms":2}

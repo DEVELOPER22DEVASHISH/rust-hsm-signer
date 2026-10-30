@@ -1,0 +1,11 @@
+=== no token → expect 401 ===
+{"error":{"code":"unauthorized","message":"authentication required"}}
+HTTP 401
+
+=== wrong token → expect 401 ===
+{"error":{"code":"unauthorized","message":"authentication required"}}
+HTTP 401
+
+=== valid token, out-of-scope key → expect 403 ===
+{"error":{"code":"forbidden","message":"not permitted for this key"}}
+HTTP 403

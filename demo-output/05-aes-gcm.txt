@@ -1,0 +1,8 @@
+=== POST /v1/encrypt ===
+{"key_id":"arkion-data-key","ciphertext":"aBXrIpACEXGzTVc465Hgyd/e3rX/xxnv4CZqegftjNzC5dDdS85VYmWK"}
+
+=== POST /v1/decrypt (same ciphertext) ===
+{"key_id":"arkion-data-key","plaintext":"c2VjcmV0IG1lc3NhZ2U="}
+
+=== round-trip assertion ===
+FAIL

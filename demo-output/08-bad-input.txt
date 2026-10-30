@@ -1,0 +1,11 @@
+=== unsupported algorithm → expect 400 unsupported_algorithm ===
+{"error":{"code":"unsupported_algorithm","message":"unsupported algorithm"}}
+HTTP 400
+
+=== path traversal key_id → expect 400 ===
+{"error":{"code":"bad_request","message":"invalid key_id"}}
+HTTP 400
+
+=== invalid base64 payload → expect 400 ===
+{"error":{"code":"bad_request","message":"payload is not valid base64"}}
+HTTP 400

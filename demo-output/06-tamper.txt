@@ -1,0 +1,7 @@
+=== Tamper test: last byte of GCM auth tag XORed with 0xFF ===
+original ciphertext: aBXrIpACEXGzTVc465Hgyd/e3rX/xxnv4CZqegftjNzC5dDdS85VYmV1
+(one byte changed)
+
+=== POST /v1/decrypt with tampered ciphertext — must be HTTP 400 decryption_failed ===
+{"error":{"code":"decryption_failed","message":"decryption failed"}}
+HTTP 400

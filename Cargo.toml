@@ -1,0 +1,53 @@
+[package]
+name = "hsm-signer"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+default-run = "hsm-signer"
+
+[lib]
+name = "hsm_signer"
+path = "src/lib.rs"
+
+[[bin]]
+name = "hsm-signer"
+path = "src/main.rs"
+
+[[bin]]
+name = "loadtest"
+path = "src/bin/loadtest.rs"
+required-features = ["loadtest"]
+
+[features]
+loadtest = ["dep:reqwest"]
+
+[dependencies]
+axum = "0.7"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "signal", "time", "sync"] }
+tokio-util = "0.7"
+tower-http = { version = "0.5", features = ["trace", "timeout"] }
+cryptoki = "0.7"
+async-trait = "0.1"
+thiserror = "1"
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+base64 = "0.22"
+sha2 = "0.10"
+subtle = "2"
+hex = "0.4"
+p256 = { version = "0.13", features = ["ecdsa"] }
+aes-gcm = "0.10"
+rand_core = { version = "0.6", features = ["getrandom"] }
+prometheus = { version = "0.13", default-features = false }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"], optional = true }
+
+[dev-dependencies]
+tower = { version = "0.4", features = ["util"] }
+tempfile = "3"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

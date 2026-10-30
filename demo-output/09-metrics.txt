@@ -1,0 +1,61 @@
+=== Prometheus metrics scrape (first 60 lines) ===
+# HELP hsm_pool_acquire_timeouts_total Requests that timed out waiting for a session
+# TYPE hsm_pool_acquire_timeouts_total counter
+hsm_pool_acquire_timeouts_total 0
+# HELP hsm_pool_capacity Total session slots in the pool
+# TYPE hsm_pool_capacity gauge
+hsm_pool_capacity 8
+# HELP hsm_pool_in_use Sessions currently checked out
+# TYPE hsm_pool_in_use gauge
+hsm_pool_in_use 0
+# HELP hsm_pool_rejected_total Requests rejected by admission control (queue full)
+# TYPE hsm_pool_rejected_total counter
+hsm_pool_rejected_total 0
+# HELP signer_op_duration_seconds End-to-end backend op latency incl. pool wait
+# TYPE signer_op_duration_seconds histogram
+signer_op_duration_seconds_bucket{op="decrypt",le="0.0005"} 1
+signer_op_duration_seconds_bucket{op="decrypt",le="0.001"} 1
+signer_op_duration_seconds_bucket{op="decrypt",le="0.002"} 1
+signer_op_duration_seconds_bucket{op="decrypt",le="0.005"} 1
+signer_op_duration_seconds_bucket{op="decrypt",le="0.01"} 1
+signer_op_duration_seconds_bucket{op="decrypt",le="0.025"} 1
+signer_op_duration_seconds_bucket{op="decrypt",le="0.05"} 1
+signer_op_duration_seconds_bucket{op="decrypt",le="0.1"} 1
+signer_op_duration_seconds_bucket{op="decrypt",le="0.25"} 1
+signer_op_duration_seconds_bucket{op="decrypt",le="0.5"} 1
+signer_op_duration_seconds_bucket{op="decrypt",le="1"} 1
+signer_op_duration_seconds_bucket{op="decrypt",le="2"} 1
+signer_op_duration_seconds_bucket{op="decrypt",le="+Inf"} 1
+signer_op_duration_seconds_sum{op="decrypt"} 0.000427291
+signer_op_duration_seconds_count{op="decrypt"} 1
+signer_op_duration_seconds_bucket{op="encrypt",le="0.0005"} 0
+signer_op_duration_seconds_bucket{op="encrypt",le="0.001"} 0
+signer_op_duration_seconds_bucket{op="encrypt",le="0.002"} 1
+signer_op_duration_seconds_bucket{op="encrypt",le="0.005"} 1
+signer_op_duration_seconds_bucket{op="encrypt",le="0.01"} 1
+signer_op_duration_seconds_bucket{op="encrypt",le="0.025"} 1
+signer_op_duration_seconds_bucket{op="encrypt",le="0.05"} 1
+signer_op_duration_seconds_bucket{op="encrypt",le="0.1"} 1
+signer_op_duration_seconds_bucket{op="encrypt",le="0.25"} 1
+signer_op_duration_seconds_bucket{op="encrypt",le="0.5"} 1
+signer_op_duration_seconds_bucket{op="encrypt",le="1"} 1
+signer_op_duration_seconds_bucket{op="encrypt",le="2"} 1
+signer_op_duration_seconds_bucket{op="encrypt",le="+Inf"} 1
+signer_op_duration_seconds_sum{op="encrypt"} 0.001985292
+signer_op_duration_seconds_count{op="encrypt"} 1
+signer_op_duration_seconds_bucket{op="sign",le="0.0005"} 0
+signer_op_duration_seconds_bucket{op="sign",le="0.001"} 0
+signer_op_duration_seconds_bucket{op="sign",le="0.002"} 0
+signer_op_duration_seconds_bucket{op="sign",le="0.005"} 4
+signer_op_duration_seconds_bucket{op="sign",le="0.01"} 5
+signer_op_duration_seconds_bucket{op="sign",le="0.025"} 5
+signer_op_duration_seconds_bucket{op="sign",le="0.05"} 5
+signer_op_duration_seconds_bucket{op="sign",le="0.1"} 5
+signer_op_duration_seconds_bucket{op="sign",le="0.25"} 5
+signer_op_duration_seconds_bucket{op="sign",le="0.5"} 5
+signer_op_duration_seconds_bucket{op="sign",le="1"} 5
+signer_op_duration_seconds_bucket{op="sign",le="2"} 5
+signer_op_duration_seconds_bucket{op="sign",le="+Inf"} 5
+signer_op_duration_seconds_sum{op="sign"} 0.017039292
+signer_op_duration_seconds_count{op="sign"} 5
+# HELP signer_requests_total Requests by op and outcome

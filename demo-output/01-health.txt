@@ -1,0 +1,4 @@
+--- /healthz ---
+ok
+--- /readyz ---
+ready
